@@ -1,0 +1,18 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath project(':buildSrc')
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.5'
+    }
+}
+
+apply plugin: 'pw.material.base'
+
+material {
+    target {
+        target = 21
+        minTarget = 15
+    }
+}

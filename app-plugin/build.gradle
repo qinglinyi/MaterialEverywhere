@@ -1,0 +1,22 @@
+apply plugin: 'groovy'
+apply plugin: 'pw.material.base'
+
+repositories {
+    jcenter()
+}
+
+configurations {
+    compile.extendsFrom exportedCompile
+}
+
+dependencies {
+    exportedCompile material.tools.asDependency(project(':buildSrc').tasks['cleanJar'])
+
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:0.13.3'
+}
+
+jar {
+    from { configurations.exportedCompile.collect { it.isDirectory() ? it : zipTree(it) } }
+}

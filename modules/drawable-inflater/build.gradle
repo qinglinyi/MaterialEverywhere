@@ -1,0 +1,7 @@
+apply plugin: 'pw.material.module'
+
+material {
+    module {
+        depends '#inflater'
+    }
+}

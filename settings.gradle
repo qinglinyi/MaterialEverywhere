@@ -1,0 +1,10 @@
+rootProject.name = 'MaterialEverywhere'
+
+include ':buildSrc'
+
+include ':modules:inflater'
+include ':modules:drawable-inflater'
+
+include ':module-pack'
+
+include ':app-plugin'
